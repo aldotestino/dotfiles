@@ -24,11 +24,11 @@ brew-validate:
 check: check-secrets syntax shellcheck brew-validate stow-check
 
 syntax:
-	bash -n bootstrap.sh scripts/*.sh .githooks/pre-commit
+	bash -n docs/install.sh bootstrap.sh scripts/*.sh .githooks/pre-commit
 	zsh -n stow/zsh/.zshrc stow/zsh/.zprofile
 
 shellcheck:
-	shellcheck bootstrap.sh scripts/*.sh .githooks/pre-commit
+	shellcheck docs/install.sh bootstrap.sh scripts/*.sh .githooks/pre-commit
 
 check-secrets:
 	./scripts/check-secrets.sh
