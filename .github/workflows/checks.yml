@@ -1,0 +1,36 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install check tools
+        run: brew install shellcheck stow
+
+      - name: Check shell syntax
+        run: make syntax
+
+      - name: Run ShellCheck
+        run: make shellcheck
+
+      - name: Validate Brewfile
+        run: make brew-validate
+
+      - name: Preview Stow links
+        run: |
+          mkdir -p "$RUNNER_TEMP/stow-home"
+          make stow-dry-run STOW_TARGET="$RUNNER_TEMP/stow-home"

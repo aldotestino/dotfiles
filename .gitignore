@@ -1,0 +1,12 @@
+.DS_Store
+
+# Secret and machine-local files
+.env
+.env.*
+!.env.example
+*.local
+.zshrc.local
+.gitconfig.local
+
+# Secret scan reports
+gitleaks-report.*

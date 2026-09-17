@@ -1,0 +1,21 @@
+[user]
+	name = aldotestino
+	email = aldotestino4@gmail.com
+
+[include]
+	path = ~/.gitconfig.local
+
+[init]
+	defaultBranch = main
+
+[fetch]
+	prune = true
+
+[core]
+	editor = code --wait
+
+[alias]
+	branches = branch --sort=-committerdate
+	last = log -1 HEAD --stat
+	root = rev-parse --show-toplevel
+	st = status --short --branch

@@ -1,0 +1,5 @@
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+window-decoration = true
+macos-titlebar-style = tabs
+keybind = shift+enter=text:\x1b\r
