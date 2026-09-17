@@ -2,7 +2,6 @@
 
 tap "grafana/grafana"
 tap "makisuo/tap", "https://github.com/Makisuo/homebrew-tap"
-tap "netbirdio/tap"
 
 brew "awscli"
 brew "cloc"
@@ -32,7 +31,6 @@ cask "ghostty"
 cask "git-credential-manager"
 cask "google-chrome"
 cask "lens"
-cask "netbirdio/tap/netbird-ui"
 cask "ngrok"
 cask "notion"
 cask "openusage"

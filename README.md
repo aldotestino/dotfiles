@@ -61,7 +61,7 @@ The Stow workflow never adopts existing files. Back up and compare an existing t
 
 ## Complete interactive setup
 
-Authentication and machine identity are not tracked. Sign in to the services you use, including GitHub, npm, AWS, Google Cloud, Railway, gcx, Docker, NetBird, Codex, Claude Code, and OpenCode.
+Authentication and machine identity are not tracked. Sign in to the services you use, including GitHub, npm, AWS, Google Cloud, Railway, gcx, Docker, Codex, Claude Code, and OpenCode.
 
 Run `make herdr-integrations` after Claude Code, Codex, and OpenCode are available. Authenticate GitHub CLI and the other installed services interactively.
 
