@@ -35,6 +35,10 @@ if command -v brew >/dev/null 2>&1; then
   FPATH="${HOMEBREW_PREFIX}/share/zsh-completions:$FPATH"
 fi
 
+# Homebrew makes its prefix group-writable by "admin" on purpose, which
+# compaudit flags as insecure; skip that check rather than fight brew.
+ZSH_DISABLE_COMPFIX=true
+
 if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
   source "$ZSH/oh-my-zsh.sh"
 else
