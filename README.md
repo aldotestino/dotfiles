@@ -11,10 +11,15 @@ The repository manages:
 
 ## Install on a new Mac
 
-After cloning the repository and entering its directory:
+Run the hosted installer:
 
 ```bash
-./bootstrap.sh
+curl -fsSL https://dotfiles.aldotestino.dev/install.sh | bash
+```
+
+After bootstrap completes, enter `~/dotfiles` and run:
+
+```bash
 make stow-dry-run
 make stow
 make hooks

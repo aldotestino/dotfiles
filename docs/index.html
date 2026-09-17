@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aldo's dotfiles</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: light-dark(#fafafa, #0b0b0c);
+        --fg: light-dark(#111, #f2f2f2);
+        --muted: light-dark(#6b6b6b, #8a8a8f);
+        --line: light-dark(#e4e4e4, #232326);
+        --panel: light-dark(#fff, #141416);
+        --ok: light-dark(#16a34a, #4ade80);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "Inter", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        width: min(40rem, 100%);
+      }
+
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0 0 1.5rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .command {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0.75rem 0.75rem 1rem;
+        border: 1px solid var(--line);
+        border-radius: 0.75rem;
+        background: var(--panel);
+      }
+
+      pre {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+
+      pre::before {
+        content: "$ ";
+        color: var(--muted);
+        user-select: none;
+      }
+
+      button {
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        background: none;
+        color: var(--muted);
+        cursor: pointer;
+        transition: color 120ms, border-color 120ms;
+      }
+
+      button:hover {
+        color: var(--fg);
+        border-color: var(--fg);
+      }
+
+      button.copied {
+        color: var(--ok);
+        border-color: var(--ok);
+      }
+
+      button svg {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      button:not(.copied) .check,
+      button.copied .copy {
+        display: none;
+      }
+
+      footer {
+        display: flex;
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+        font-size: 0.875rem;
+      }
+
+      footer a {
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 120ms;
+      }
+
+      footer a:hover {
+        color: var(--fg);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Aldo's dotfiles</h1>
+      <p>Install the dotfiles and start the bootstrap process.</p>
+      <div class="command">
+        <pre><code>curl -fsSL https://dotfiles.aldotestino.dev/install.sh | bash</code></pre>
+        <button type="button" aria-label="Copy command">
+          <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+          </svg>
+          <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+        </button>
+      </div>
+      <footer>
+        <a href="https://aldotestino.dev">aldotestino.dev</a>
+        <a href="https://github.com/aldotestino">GitHub</a>
+        <a href="https://x.com/aldotestino4">X</a>
+      </footer>
+    </main>
+    <script>
+      const button = document.querySelector("button");
+      let timer;
+
+      button.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(document.querySelector("code").textContent);
+        button.classList.add("copied");
+        clearTimeout(timer);
+        timer = setTimeout(() => button.classList.remove("copied"), 2000);
+      });
+    </script>
+  </body>
+</html>

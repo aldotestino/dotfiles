@@ -14,9 +14,14 @@ if [[ "$(uname -s)" != "Darwin" ]]; then
 fi
 
 if ! xcode-select -p >/dev/null 2>&1; then
-  echo "Apple Command Line Tools are required."
-  echo "Starting their installer; rerun this script after installation finishes."
+  cat >&2 <<'EOF'
+Apple Command Line Tools are required.
+
+Install them with:
   xcode-select --install
+
+Then rerun this script.
+EOF
   exit 1
 fi
 
