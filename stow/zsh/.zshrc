@@ -79,6 +79,7 @@ command -v lazygit >/dev/null 2>&1 && alias lg='lazygit'
 alias cc='claude'
 alias ccd='claude --dangerously-skip-permissions'
 alias oc='opencode'
+alias h='herdr'
 
 alias dcb='docker compose build'
 alias dcd='docker compose down'
