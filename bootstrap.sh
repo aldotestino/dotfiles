@@ -94,6 +94,12 @@ trap - EXIT
 echo "Installing the reviewed Brewfile..."
 brew bundle --file="${DOTFILES_DIR}/Brewfile"
 
+if [[ -f "${HOME}/.gitconfig" && ! -L "${HOME}/.gitconfig" ]]; then
+  echo "Moving the generated ~/.gitconfig to ~/.gitconfig.local so stow can link the tracked one..."
+  cat "${HOME}/.gitconfig" >>"${HOME}/.gitconfig.local"
+  rm "${HOME}/.gitconfig"
+fi
+
 if ! gh extension list | grep -q '^gh stack[[:space:]]'; then
   echo "Installing the gh-stack extension..."
   gh extension install github/gh-stack
@@ -124,12 +130,12 @@ cat <<EOF
 
 Bootstrap complete.
 
-Configuration has not been linked automatically. Review the dry run first:
-  ${DOTFILES_DIR}/scripts/stow.sh --dry-run
+Configuration has not been linked automatically. From ${DOTFILES_DIR}, review the dry run first:
+  make stow-dry-run
 
 Then create the links with:
-  ${DOTFILES_DIR}/scripts/stow.sh
+  make stow
 
 Finally enable the repository's Gitleaks hook:
-  ${DOTFILES_DIR}/scripts/install-hooks.sh
+  make hooks
 EOF
