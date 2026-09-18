@@ -25,7 +25,7 @@ brew "makisuo/tap/maple", trusted: true
 
 cask "cap"
 cask "codex"
-cask "docker"
+cask "docker-desktop"
 cask "gcloud-cli"
 cask "ghostty"
 cask "git-credential-manager"
