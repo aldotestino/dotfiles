@@ -18,6 +18,7 @@ brew "kubernetes-cli"
 brew "lazydocker"
 brew "lazygit"
 brew "mole"
+brew "neovim"
 brew "railway"
 brew "uv"
 brew "grafana/grafana/gcx", trusted: true

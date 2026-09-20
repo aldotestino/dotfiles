@@ -8,4 +8,4 @@ accessible_prompter: disabled
 spinner: enabled
 telemetry: enabled
 aliases:
-  co: pr checkout
+    co: pr checkout

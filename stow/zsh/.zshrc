@@ -5,6 +5,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PNPM_HOME="$HOME/.pnpm"
 export PATH="$PNPM_HOME:$PNPM_HOME/bin:$PATH"
+export CARGO_HOME="${CARGO_HOME:-$HOME/.cargo}"
+export PATH="$CARGO_HOME/bin:$PATH"
 
 # History
 HISTFILE="$HOME/.zsh_history"
@@ -96,3 +98,6 @@ command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 if [[ -r "${HOMEBREW_PREFIX:-}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
   source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
+
+# bun completions
+[ -s "/Users/aldotestino/.bun/_bun" ] && source "/Users/aldotestino/.bun/_bun"

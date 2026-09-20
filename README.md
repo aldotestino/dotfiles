@@ -1,13 +1,13 @@
 # Dotfiles
 
-Reproducible macOS setup using Homebrew Bundle, GNU Stow, Oh My Zsh, Starship, nvm, and Gitleaks.
+Reproducible macOS setup using Homebrew Bundle, GNU Stow, Oh My Zsh, Starship, nvm, rustup, LazyVim, and Gitleaks.
 
 The repository manages:
 
 - Command-line tools, applications, fonts, and VS Code extensions in `Brewfile`
-- Portable shell, Git, GitHub CLI, editor, terminal, Herdr, Claude Code, and OpenCode configuration under `stow/`
+- Portable shell, Git, GitHub CLI, LazyVim, editor, terminal, Herdr, Claude Code, and OpenCode configuration under `stow/`
 - Global agent skills through the tracked `stow/agents/.agents/` snapshot
-- Node.js, Bun, pnpm, OpenCode, Claude Code, Claude MCP servers, and `gh-stack` setup through `bootstrap.sh`
+- Node.js, Bun, pnpm, Rust via rustup, OpenCode, Claude Code, Claude MCP servers, and `gh-stack` setup through `bootstrap.sh`
 
 ## Install on a new Mac
 
@@ -34,6 +34,21 @@ NODE_VERSION='lts/*' ./bootstrap.sh
 ```
 
 Avoid forced Homebrew Bundle cleanup during the initial migration; it may remove software not declared here.
+
+## LazyVim
+
+The tracked Neovim configuration is based on the official [LazyVim starter](https://github.com/LazyVim/starter). Homebrew installs Neovim, Cargo installs the required `tree-sitter-cli`, and `make stow` links the starter at `~/.config/nvim`.
+
+If Neovim has existing configuration or state, follow LazyVim's installation guidance and move it aside before linking the dotfiles:
+
+```bash
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
+```
+
+The configuration directory backup is required when it already exists; the data, state, and cache backups are optional but recommended. After running `make stow`, start `nvim` to install the plugins, then run `:LazyHealth` as recommended by LazyVim.
 
 ## Validate
 
