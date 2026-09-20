@@ -20,7 +20,6 @@ brew "lazygit"
 brew "mole"
 brew "neovim"
 brew "railway"
-brew "tree-sitter-cli"
 brew "uv"
 brew "grafana/grafana/gcx", trusted: true
 brew "makisuo/tap/maple", trusted: true

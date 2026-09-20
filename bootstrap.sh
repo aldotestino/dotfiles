@@ -6,7 +6,8 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly DOTFILES_DIR
 readonly NODE_VERSION="${NODE_VERSION:-node}"
 
-export PATH="${HOME}/.local/bin:${PATH}"
+export CARGO_HOME="${CARGO_HOME:-${HOME}/.cargo}"
+export PATH="${CARGO_HOME}/bin:${HOME}/.local/bin:${PATH}"
 
 if [[ "$(uname -s)" != "Darwin" ]]; then
   echo "This bootstrap script currently supports macOS only." >&2
@@ -93,6 +94,9 @@ trap - EXIT
 
 echo "Installing rustup and the latest stable Rust toolchain with the official installer..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+
+echo "Installing tree-sitter-cli with Cargo..."
+cargo install tree-sitter-cli --locked
 
 echo "Installing the reviewed Brewfile..."
 brew bundle --file="${DOTFILES_DIR}/Brewfile"

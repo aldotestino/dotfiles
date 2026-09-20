@@ -37,7 +37,7 @@ Avoid forced Homebrew Bundle cleanup during the initial migration; it may remove
 
 ## LazyVim
 
-The tracked Neovim configuration is based on the official [LazyVim starter](https://github.com/LazyVim/starter). Homebrew installs Neovim and the supporting tools; `make stow` links the starter at `~/.config/nvim`.
+The tracked Neovim configuration is based on the official [LazyVim starter](https://github.com/LazyVim/starter). Homebrew installs Neovim, Cargo installs the required `tree-sitter-cli`, and `make stow` links the starter at `~/.config/nvim`.
 
 If Neovim has existing configuration or state, follow LazyVim's installation guidance and move it aside before linking the dotfiles:
 
