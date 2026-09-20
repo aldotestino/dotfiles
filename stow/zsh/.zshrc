@@ -5,6 +5,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PNPM_HOME="$HOME/.pnpm"
 export PATH="$PNPM_HOME:$PNPM_HOME/bin:$PATH"
+export CARGO_HOME="${CARGO_HOME:-$HOME/.cargo}"
+export PATH="$CARGO_HOME/bin:$PATH"
 
 # History
 HISTFILE="$HOME/.zsh_history"

@@ -91,6 +91,9 @@ curl -fsSL https://get.pnpm.io/install.sh | env \
 rm -f "${pnpm_shell_config}"
 trap - EXIT
 
+echo "Installing rustup and the latest stable Rust toolchain with the official installer..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+
 echo "Installing the reviewed Brewfile..."
 brew bundle --file="${DOTFILES_DIR}/Brewfile"
 
