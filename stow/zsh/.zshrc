@@ -98,3 +98,6 @@ command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 if [[ -r "${HOMEBREW_PREFIX:-}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
   source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
+
+# bun completions
+[ -s "/Users/aldotestino/.bun/_bun" ] && source "/Users/aldotestino/.bun/_bun"
