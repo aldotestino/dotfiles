@@ -4,6 +4,7 @@ tap "grafana/grafana"
 tap "makisuo/tap", "https://github.com/Makisuo/homebrew-tap"
 
 brew "awscli"
+brew "btop"
 brew "cloc"
 brew "cmake"
 brew "fzf"

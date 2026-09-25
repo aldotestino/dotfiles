@@ -1,12 +1,13 @@
 STOW_TARGET ?= $(HOME)
 
-.PHONY: brew-check brew-validate check check-secrets help herdr-integrations hooks shellcheck stow stow-check stow-delete stow-dry-run syntax
+.PHONY: brew-check brew-validate check check-secrets claude-skills help herdr-integrations hooks shellcheck stow stow-check stow-delete stow-dry-run syntax
 
 help:
 	@echo "brew-check     Check Brewfile dependencies without installing"
 	@echo "brew-validate  Validate the Brewfile without installing"
 	@echo "check          Run all local repository checks"
 	@echo "check-secrets  Scan current files and Git history"
+	@echo "claude-skills  Link global agent skills into Claude Code"
 	@echo "herdr-integrations  Install Claude, Codex, and OpenCode integrations"
 	@echo "hooks          Enable tracked Git hooks"
 	@echo "shellcheck     Analyze tracked shell scripts"
@@ -35,6 +36,17 @@ check-secrets:
 
 hooks:
 	./scripts/install-hooks.sh
+
+claude-skills:
+	@test -d "$(HOME)/.agents/skills" || { echo "Missing $(HOME)/.agents/skills; run make stow first" >&2; exit 1; }
+	@mkdir -p "$(HOME)/.claude/skills"
+	@for skill in "$(HOME)"/.agents/skills/*; do \
+		[ -e "$$skill" ] || continue; \
+		target="$(HOME)/.claude/skills/$$(basename "$$skill")"; \
+		if [ -L "$$target" ] && [ "$$(readlink "$$target")" = "$$skill" ]; then continue; fi; \
+		if [ -e "$$target" ] || [ -L "$$target" ]; then echo "Refusing to replace $$target" >&2; exit 1; fi; \
+		ln -s "$$skill" "$$target"; \
+	done
 
 herdr-integrations:
 	herdr integration install claude

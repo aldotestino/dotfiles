@@ -22,6 +22,7 @@ After bootstrap completes, enter `~/dotfiles` and run:
 ```bash
 make stow-dry-run
 make stow
+make claude-skills
 make hooks
 ```
 
@@ -73,6 +74,8 @@ make stow-delete
 Application packages link individual files so generated logs, caches, and sessions remain outside the repository. The `agents` package intentionally links the complete `~/.agents` directory; global skill updates may therefore modify this repository and should be reviewed before committing.
 
 The Stow workflow never adopts existing files. Back up and compare an existing target file before resolving a conflict.
+
+Run `make claude-skills` after `make stow` to link each skill from `~/.agents/skills` into `~/.claude/skills`. Existing Claude skills are left untouched; a conflicting name causes the command to stop rather than replace it.
 
 ## Complete interactive setup
 
