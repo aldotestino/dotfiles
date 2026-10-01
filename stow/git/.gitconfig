@@ -13,6 +13,7 @@
 
 [core]
 	editor = code --wait
+	pager = less -FRX
 
 [alias]
 	branches = branch --sort=-committerdate
