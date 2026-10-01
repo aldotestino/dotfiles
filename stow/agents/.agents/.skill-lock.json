@@ -439,6 +439,96 @@
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-08-07T10:29:16.908Z",
       "updatedAt": "2026-09-09T15:16:10.130Z"
+    },
+    "albatross-frontend-design": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/frontend/skills/design/SKILL.md",
+      "skillFolderHash": "cac97a75039ce8f076e0191916e98d38e8d8f896",
+      "installedAt": "2026-09-21T10:00:08.319Z",
+      "updatedAt": "2026-09-21T10:00:08.319Z"
+    },
+    "albatross-frontend-forms": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/frontend/skills/forms/SKILL.md",
+      "skillFolderHash": "2bb93e22432f15e2635e4e578cdae1762c53030c",
+      "installedAt": "2026-09-21T10:00:08.321Z",
+      "updatedAt": "2026-09-21T10:00:08.321Z"
+    },
+    "albatross-platform-cli": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/platform/skills/cli/SKILL.md",
+      "skillFolderHash": "fd34b3e25689f7d98a6cf88cb39da81e5c089c87",
+      "installedAt": "2026-09-21T10:00:08.322Z",
+      "updatedAt": "2026-09-29T09:37:02.229Z"
+    },
+    "albatross-platform-routines": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/platform/skills/routines/SKILL.md",
+      "skillFolderHash": "9db43d802a97bdd68871574e3bc79a2b1720840b",
+      "installedAt": "2026-09-21T10:00:08.322Z",
+      "updatedAt": "2026-09-21T10:00:08.322Z"
+    },
+    "albatross-typescript-code": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/typescript/skills/code/SKILL.md",
+      "skillFolderHash": "0344aaebd5c6fa7fb67e3b08aa9d48e852e3ee74",
+      "installedAt": "2026-09-21T10:00:08.323Z",
+      "updatedAt": "2026-09-21T10:00:08.323Z"
+    },
+    "albatross-workflows-async": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/workflows/skills/async/SKILL.md",
+      "skillFolderHash": "1b2a39bf940b8bc2e8e440277d4368cbb9669c75",
+      "installedAt": "2026-09-21T10:00:08.324Z",
+      "updatedAt": "2026-09-21T10:00:08.324Z"
+    },
+    "albatross-workflows-use-case": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/workflows/skills/use-case/SKILL.md",
+      "skillFolderHash": "b1cc3c23000cfcd415c978247ad00bd005372c82",
+      "installedAt": "2026-09-21T10:00:08.324Z",
+      "updatedAt": "2026-09-21T10:00:08.324Z"
+    },
+    "albatross-rust-code": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/rust/skills/code/SKILL.md",
+      "skillFolderHash": "7d8cf9a8316f565f34c42d93cd9135a948d78e65",
+      "installedAt": "2026-09-21T15:33:37.203Z",
+      "updatedAt": "2026-09-21T15:33:37.203Z"
+    },
+    "albatross-rust-docs": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/rust/skills/docs/SKILL.md",
+      "skillFolderHash": "434c5499581466c44f1b9f94b131b20ec6b05e99",
+      "installedAt": "2026-09-21T15:33:37.205Z",
+      "updatedAt": "2026-09-21T15:33:37.205Z"
+    },
+    "albatross-platform-feature-video": {
+      "source": "albatross-core/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/albatross-core/skills.git",
+      "skillPath": "plugins/platform/skills/feature-video/SKILL.md",
+      "skillFolderHash": "b7a5332bc4edad54793a1eefc08a16d154533e1b",
+      "installedAt": "2026-09-30T08:19:39.090Z",
+      "updatedAt": "2026-09-30T08:54:22.147Z"
     }
   },
   "dismissed": {

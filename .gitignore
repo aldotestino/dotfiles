@@ -10,3 +10,6 @@
 
 # Secret scan reports
 gitleaks-report.*
+
+# Albatross Skills
+stow/agents/.agents/skills/albatross*

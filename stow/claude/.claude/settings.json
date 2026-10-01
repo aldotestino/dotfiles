@@ -6,6 +6,10 @@
     "sessionUrl": false
   },
   "model": "opus[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/aldotestino/.claude/statusline.sh"
+  },
   "effortLevel": "medium",
   "modelSettings": {
     "claude-opus-5": {
@@ -20,9 +24,5 @@
   },
   "tui": "fullscreen",
   "theme": "auto",
-  "agentPushNotifEnabled": true,
-  "statusLine": {
-    "type": "command",
-    "command": "/Users/aldotestino/.claude/statusline.sh"
-  }
+  "agentPushNotifEnabled": true
 }
