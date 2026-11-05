@@ -1,7 +1,6 @@
 # Reviewed macOS package and application setup.
 
 tap "grafana/grafana"
-tap "makisuo/tap", "https://github.com/Makisuo/homebrew-tap"
 
 brew "awscli"
 brew "btop"
@@ -23,7 +22,6 @@ brew "neovim"
 brew "railway"
 brew "uv"
 brew "grafana/grafana/gcx", trusted: true
-brew "makisuo/tap/maple", trusted: true
 
 cask "cap"
 cask "codex"
