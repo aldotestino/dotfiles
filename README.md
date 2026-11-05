@@ -7,7 +7,7 @@ The repository manages:
 - Command-line tools, applications, fonts, and VS Code extensions in `Brewfile`
 - Portable shell, Git, GitHub CLI, LazyVim, editor, terminal, Herdr, Claude Code, and OpenCode configuration under `stow/`
 - Global agent skills through the tracked `stow/agents/.agents/` snapshot
-- Node.js, Bun, pnpm, Rust via rustup, OpenCode, Claude Code, Claude MCP servers, and `gh-stack` setup through `bootstrap.sh`
+- Node.js, Bun, pnpm, Rust via rustup, OpenCode, Claude Code, Maple, Claude MCP servers, and `gh-stack` setup through `bootstrap.sh`
 
 ## Install on a new Mac
 

@@ -123,6 +123,9 @@ curl -fsSL https://opencode.ai/v2/install | bash -s -- --no-modify-path
 echo "Installing the latest Claude Code release with the official installer..."
 curl -fsSL https://claude.ai/install.sh | bash
 
+echo "Installing the latest Maple release with the official installer..."
+curl -fsSL https://maple.dev/cli/install | MAPLE_BIN_DIR="${HOME}/.local/bin" sh
+
 if ! claude mcp get linear >/dev/null 2>&1; then
   echo "Adding the Linear MCP server to Claude Code..."
   claude mcp add --scope user --transport http linear https://mcp.linear.app/mcp
